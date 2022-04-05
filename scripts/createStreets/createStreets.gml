@@ -1,8 +1,5 @@
 /// @function createStreets();
 function createStreets(){
-	global.block = 384;
-	global.tile_size = 16;
-	global.road_type_width = [6,10,4,4];
 		inters = [
 	//slug,x blocks, y blocks, n_term, e_slug, s_slug, w_term, 0-6
 	//e_name, s_name, e_type, s_type, traf_light, n_edge ,e_edge, s_edge, w_edge 7-15
@@ -120,23 +117,6 @@ function createStreets(){
 	global.inters_count = array_length(inters);
 	global.inters_grid = ds_grid_create(16,global.inters_count);
 	for (i = 0; i < global.inters_count;i++) {
-		var this_inter = instance_create_layer(inters[i][1]*global.block,inters[i][2]*global.block,"Roads",obj_intersection);
-		this_inter.slug = inters[i][0];
-		this_inter.n_term = inters[i][3];
-		this_inter.e_slug = inters[i][4];
-		this_inter.s_slug = inters[i][5];
-		this_inter.w_term = inters[i][6];
-		this_inter.e_name = inters[i][7];
-		this_inter.s_name = inters[i][8];
-		this_inter.e_type = inters[i][9];
-		this_inter.s_type = inters[i][10];
-		
-		this_inter.traf_light = inters[i][11];
-		this_inter.n_edge = inters[i][12];
-		this_inter.e_edge = inters[i][13];
-		this_inter.s_edge = inters[i][14];
-		this_inter.w_edge = inters[i][15];
-		
 		for (g = 0; g < 16; g++) {
 			ds_grid_set(global.inters_grid, g, i, inters[i][g]);
 		}

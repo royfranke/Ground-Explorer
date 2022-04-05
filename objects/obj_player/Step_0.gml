@@ -12,6 +12,11 @@ else {
 if (state == "walking") {
 	facing = getMoveDirection();
 	next_coord = getNextCoord(x,y,2,facing);
-	x = next_coord[0];
-	y = next_coord[1];
+	if (!position_meeting(next_coord[0],next_coord[1],obj_collision)) {
+		x = next_coord[0];
+		y = next_coord[1];
+	}
+	else {
+		state = "idle";
+	}
 }

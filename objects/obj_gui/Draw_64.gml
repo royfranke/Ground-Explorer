@@ -2,7 +2,7 @@
 // You can write your code in this editor
 draw_set_color(c_white);
 draw_text(24,64,mouse_street);
-draw_text(24,88,mouse_street);
+draw_text(24,88,instance_count);
 draw_text(24,104,string(fps)+" "+string(fps_real)+" "+string(room_speed));
 
 draw_rectangle(24,24,48,48,false);
